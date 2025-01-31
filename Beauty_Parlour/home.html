@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monica Beauty Parlour - Make your beauty into natural..</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <style>
+        body { font-family: Arial, sans-serif;background: linear-gradient(white, pink); }
+        .carousel img { width: 100%; height: 500px; object-fit: cover; }
+        .reviews, .about { padding: 50px 10%; }
+        .footer {  color:  black; padding: 20px 10%; }
+        .footer a { color: black; text-decoration: none; }
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index_home.html">
+            <img src="logo.png" alt="Logo"> 
+            <span>Monica Beauty Parlour</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+          
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="services.html">Services</a></li>
+                        <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                        <li><a class="dropdown-item" href="book_appointment.html">Book Appointment</a></li>
+                        
+                    </ul>
+                </li>
+            </ul> 
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="padding-left: 28px; padding-top: 45px;"></div>
+    
+    <!-- Carousel --> 
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="services_1.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="services_4.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="services_6.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- Services Info -->
+    <div class="text-center my-5">
+        <h3><strong>We’re servicing over 1000+ people with good feedback..</strong></h3>
+        <h3><strong>We have assistants with 5+ years of experience.</strong></h3>
+    </div>
+        <!-- Booking Section -->
+        <div class="text-center my-5">
+          <h2>Please check out our services & book appointment..</h2>
+          <a href="services.html" class="btn btn-dark btn-lg">Book Now</a>
+      </div>
+      <hr>
+
+    <!-- Reviews Section -->
+    <div class="container my-5">
+      <h2 class="text-primary">Our customer’s reviews</h2>
+      <br>
+      <div class="row text-center">
+          <div class="col-md-4">
+              <div class="d-flex align-items-center">
+                  <img src="services_4.jpg" class="rounded-circle me-3" style="width: 80px; height: 80px;" alt="Reviewer 1">
+                  <div>
+                      <h5><b>Wonderful!</b></h5>
+                      <div>⭐⭐⭐⭐⭐</div>
+                      <p>They make me so beautiful that I can't imagine. Well, thank them for their wonderful job!</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="d-flex align-items-center">
+                  <img src="services_1.jpg" class="rounded-circle me-3" style="width: 80px; height: 80px;" alt="Reviewer 2">
+                  <div>
+                      <h5><b>Great Job!</b></h5>
+                      <div>⭐⭐⭐⭐⭐</div>
+                      <p>The assistants are well-trained, and the prices are within budget.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="d-flex align-items-center">
+                  <img src="services_3.jpg" class="rounded-circle me-3" style="width: 80px; height: 80px;" alt="Reviewer 3">
+                  <div>
+                      <h5><b>Great Service!</b></h5>
+                      <div>⭐⭐⭐⭐⭐</div>
+                      <p>Well-trained assistants and a friendly environment. Highly recommended!</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <hr>
+  
+
+    <!-- About Us -->
+    <div class="about Us">
+        <h3><b>About Us</b> </h3>
+        <p><strong>Our company was established in 1995. We are successfully running in the beauty parlour industry. Our assistants are well-trained with experience in hair styling, bridal makeup, and more. We are currently delivering services in one town but plan to expand soon.</strong></p>
+    </div>
+    <hr>
+
+    <!-- Footer -->
+    <div class="footer mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <h4><b>Address:</b></h4>
+                <p><strong> Panduranga Swamy Temple, Opposite Ongole Bus Stand, Kavali, Nellore District, Andhra Pradesh, 524201</strong></p>
+            </div>
+            <div class="col-md-6 text-end">
+                <h4><b>Contact us:</b></h4>
+                <p><strong> +91 7284636473</strong></p>
+                <p><strong>Email: mbp12679@gmail.com</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

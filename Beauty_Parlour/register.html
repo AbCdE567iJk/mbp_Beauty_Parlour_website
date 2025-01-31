@@ -1,0 +1,169 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monica Beauty Parlour - Make your beauty into natural..</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, #ffcccc);
+        }
+
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index_home.html">
+                <img src="logo.png" alt="Logo"> 
+                <span>Monica Beauty Parlour</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center">Create a New Account</h2>
+
+        <div class="form-container mt-4">
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="userName" name="userName" required>
+                    <div id="nameError" class="error-message"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="userEmail" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="userEmail" name="userEmail" required>
+                    <div id="emailError" class="error-message"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="userPhone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="userPhone" name="userPhone" required>
+                    <div id="phoneError" class="error-message"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="userPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="userPassword" name="userPassword" required>
+                    <div id="passwordError" class="error-message"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                    <div id="confirmPasswordError" class="error-message"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            let valid = true;
+
+            // Full Name Validation (Only letters and spaces)
+            let name = document.getElementById('userName').value.trim();
+            let nameError = document.getElementById('nameError');
+            if (!/^[A-Za-z\s]+$/.test(name)) {
+                nameError.textContent = "Full name should only contain letters.";
+                valid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            // Email Validation (Must contain @ and end with .com)
+            let email = document.getElementById('userEmail').value.trim();
+            let emailError = document.getElementById('emailError');
+            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu)$/.test(email)) {
+                emailError.textContent = "Enter a valid email (e.g., example@gmail.com).";
+                valid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Phone Number Validation (Only numbers, exactly 10 digits)
+            let phone = document.getElementById('userPhone').value.trim();
+            let phoneError = document.getElementById('phoneError');
+            if (!/^\d{10}$/.test(phone)) {
+                phoneError.textContent = "Enter a valid 10-digit phone number.";
+                valid = false;
+            } else {
+                phoneError.textContent = "";
+            }
+
+            // Password Validation (Minimum 8 characters, at least one uppercase, one lowercase, one number, one special character)
+            let password = document.getElementById('userPassword').value.trim();
+            let passwordError = document.getElementById('passwordError');
+            if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+                passwordError.textContent = "Password must be at least 8 characters with uppercase, lowercase, number & special character.";
+                valid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            // Confirm Password Validation
+            let confirmPassword = document.getElementById('confirmPassword').value.trim();
+            let confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (confirmPassword !== password) {
+                confirmPasswordError.textContent = "Passwords do not match.";
+                valid = false;
+            } else {
+                confirmPasswordError.textContent = "";
+            }
+
+            // If all validations pass, submit the form
+            if (valid) {
+                alert("Registration Successful!");
+                this.submit();
+                window.location.href = "home.html";
+            }
+        });
+
+        // Prevent alphabets in phone number field
+        document.getElementById('userPhone').addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '');
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

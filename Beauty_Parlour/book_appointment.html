@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monica Beauty Parlour - Make your beauty into natural..</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script defer src="book-appointment.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, #ffcccc);
+        }
+    
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="home.html">
+                    <img src="logo.png" alt="Logo"> 
+                    <span>Monica Beauty Parlour</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Menu</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="services.html">Services</a></li>
+                                <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container text-center my-4" style="padding-left: 28px; padding-top: 90px;">
+        
+        <h1 style="font-family: 'Vast Shadow', serif; font-weight: 450; font-style: normal; font-weight: bold;">Book Appointment</h2>
+             
+        </div>
+        <br>
+    
+        <div class="container appointment-container">
+             <div class="form-container">
+
+            
+            <form id="appointmentForm form-container mt-4" class="mt-4">
+    
+                <div class="mb-3">
+                    <label for="customerName" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="customerName" name="customerName" required>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="customerPhone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="customerPhone" name="customerPhone" required>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="serviceName" class="form-label">Select Service</label>
+                    <select class="form-control" id="serviceName" name="serviceName" required>
+                        <option value="">Choose a service...</option>
+                        <option value="Facial">Facial</option>
+                        <option value="Eyebrow Shaping">Eyebrow Shaping</option>
+                        <option value="Haircut">Haircut</option>
+                        <option value="Makeup">Makeup</option>
+                        <option value="Spa">Spa</option>
+                        <option value="Mehandi">Mehandi</option>
+                        <option value="Haircut">Haircut</option>
+                        <option value="Pedicure">Pedicure</option>
+                        <option value="Manicure">Manicure</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="appointmentDate" class="form-label">Select Date</label>
+                    <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" required>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="appointmentTime" class="form-label">Select Time</label>
+                    <input type="time" class="form-control" id="appointmentTime" name="appointmentTime" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="paymentOption" class="form-label">Make Payment</label><br>
+                    <!-- Payment buttons -->
+                    <button type="button" class="btn btn-outline-primary mx-3" id="onlineBtn">Online</button>
+                    <button type="button" class="btn btn-outline-secondary mx-3" id="offlineBtn">Offline</button>
+                </div>
+
+                <input type="hidden" id="paymentType" name="paymentType">
+    
+                <div class="mt-auto d-flex justify-content-center">
+                     <button type="submit" class="btn btn-primary w-100">Confirm Appointment</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            // Script to handle payment option selection
+            document.getElementById("onlineBtn").addEventListener("click", function() {
+                // Set the payment type to Online and redirect to the Online Payment page
+                document.getElementById("paymentType").value = "Online";
+                window.location.href = "online_payment.html"; // Navigate to the Online Payment page
+            });
+    
+            document.getElementById("offlineBtn").addEventListener("click", function() {
+                // Set the payment type to Offline
+                document.getElementById("paymentType").value = "Offline";
+                alert("You have selected Offline Payment.");
+            });
+        </script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    
